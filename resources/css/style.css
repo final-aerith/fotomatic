@@ -71,6 +71,7 @@ header nav ul {
 header a {
   text-decoration: none;
 }
+
 nav li {
   padding-left: 3.5rem;
   list-style: none;
@@ -81,10 +82,12 @@ nav a {
   line-height: 1.6;
   font-size: 1rem;
   color: #4a4a4a;
+  display: flex;
+  align-items: center;
 }
 
 header .icon {
-  width: 1rem;
+  width: 2rem;
   padding-left: 0.75rem;
 }
 
@@ -92,7 +95,24 @@ header .mobile {
   display: none;
 }
 
-@media only screen and (max-width: 760px) {
+nav li:last-of-type {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  nav li:last-of-type {
+    display: block;
+  }
+
+  header .button {
+    padding: 0.1875rem 0.5rem;
+    background-color: #9dc20b;
+    line-height: 1.6;
+    color: white;
+  }
+}
+
+@media only screen and (max-width: 480px) {
   header .desktop {
     display: none;
   }
@@ -115,13 +135,6 @@ header .mobile {
 
   header .mobile li {
     padding: 0;
-  }
-
-  header .mobile .button {
-    padding: 0.1875rem 0.5rem;
-    background-color: #9dc20b;
-    line-height: 1.6;
-    color: white;
   }
 }
 
@@ -181,39 +194,24 @@ header .mobile {
   padding: 1.25rem 7.25rem;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
   #sign-up-section {
     align-items: center;
     justify-content: center;
     height: 28rem;
   }
 
-  #sign-up-cta {
-    position: static;
-    width: auto;
-    height: auto;
-    background-color: transparent;
-    border: none;
-  }
-
-  #sign-up-cta .content {
-    margin-top: 0;
-  }
-
   #sign-up-cta .email {
     display: none;
   }
 
-  #sign-up-cta h1 {
-    font-size: 3.125rem;
-  }
-
-  #sign-up-cta h2 {
-    font-size: 2.25rem;
+  #sign-up-cta {
+    background-color: transparent;
+    border: none;
   }
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 480px) {
   #sign-up-section {
     height: 20rem;
   }
@@ -251,8 +249,8 @@ header .mobile {
   width: auto;
 }
 
-.feature .content{
-  padding-top: 2.5rem; 
+.feature .content {
+  padding-top: 2.5rem;
 }
 
 .feature h2 {
@@ -267,23 +265,25 @@ header .mobile {
   font-size: 1rem;
   line-height: 1.2;
   font-weight: 300;
-  color: #4a4a4a;  
+  color: #4a4a4a;
 }
 
-@media only screen and (max-width: 890px) {
-  .feature h2 {
-    font-size: 1.125rem;
-    line-height: 1.3;
-    font-weight: normal;
+@media only screen and (max-width: 768px) {
+  .feature {
+    height: auto;
   }
 
-  .feature h3 {
-    font-size: 0.875rem;
-    line-height: 1.4;
+  #features-section {
+    padding: 1rem;
+    gap: 0;
+  }
+
+  .feature .content {
+    text-align: left;
   }
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 480px) {
   #features-section {
     flex-flow: column;
     padding: 0;
@@ -291,7 +291,22 @@ header .mobile {
 
   .feature {
     margin: 0;
-    padding: 1.25rem 1rem 0 1rem;
+    padding: 1.875rem;
+  }
+
+  .feature:first-of-type {
+    background-color: #f3f3f3;
+  }
+
+  .feature h2 {
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .feature h3 {
+    font-size: 0.875rem;
+    line-height: 1.4;
   }
 }
 
@@ -326,7 +341,7 @@ header .mobile {
   display: flex;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 480px) {
   #filters-section {
     padding: 1.5rem 0 0 0;
   }
@@ -378,24 +393,41 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
 }
 
-@media only screen and (max-width: 760px) {
-  #quotes-section content {
-    padding: 1.875rem 0.625rem;
+@media only screen and (max-width: 768px) {
+  #quotes-section .content {
+    padding: 1.875rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
     font-size: 1.5rem;
     line-height: 1.4;
+    text-align: left;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #quotes-section .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote {
+    text-align: center;
+  }
+
+  #quotes-section .quote-citation {
     display: block;
     padding-top: 1rem;
     margin: auto;
+  }
+
+  #quotes-section .quote-citation {
+    height: auto;
   }
 }
 
@@ -416,7 +448,7 @@ footer .copyright {
   flex-grow: 1;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 480px) {
   footer .content {
     font-size: 0.625rem;
   }
